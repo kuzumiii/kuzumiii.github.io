@@ -1,0 +1,170 @@
+Por que me sale este error en git?
+$ git push origin mastar
+error: src refspec mastar does not match any
+error: failed to push some refs to 'github.com:kuzumiii/prueba_grithub_alumno.git'
+El error que estás recibiendo indica que la rama "mastar" no existe en tu repositorio local y, por lo tanto, no se puede empujar a la rama "mastar" en el repositorio remoto en GitHub.
+
+Es posible que el problema sea un error tipográfico en el nombre de la rama. La rama principal predeterminada de Git se llama "master", por lo que es posible que hayas cometido un error tipográfico al ingresar el nombre de la rama.
+
+Para verificar las ramas existentes en tu repositorio local, puedes ejecutar el siguiente comando en tu terminal:
+
+Copy code
+git branch
+Este comando te mostrará una lista de las ramas existentes en tu repositorio local. Asegúrate de que la rama que estás intentando empujar exista y que estés escribiendo el nombre de la rama correctamente.
+
+Si la rama no existe, deberás crearla primero con el siguiente comando:
+
+Copy code
+git branch mastar
+Luego, puedes cambiar a la nueva rama con el siguiente comando:
+
+Copy code
+git checkout mastar
+Ahora puedes hacer los cambios necesarios en la nueva rama y empujarlos a tu repositorio remoto en GitHub con el siguiente comando:
+
+perl
+Copy code
+git push origin mastar
+Espero que esto te ayude a solucionar el problema.
+
+
+
+
+Mariano Jaimez
+Como puedo resolver este problema?
+
+$ git push origin master
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+Este error indica que Git no puede autenticarse con GitHub utilizando tu clave pública SSH. Esto podría suceder porque no tienes las credenciales adecuadas para acceder al repositorio, o porque no tienes configurada correctamente la autenticación de SSH.
+
+Aquí hay algunos pasos que puedes seguir para solucionar este problema:
+
+Verifica que tienes acceso al repositorio: asegúrate de que tienes permiso para acceder y realizar operaciones en el repositorio. Si no tienes permiso, es posible que debas solicitarlo al propietario del repositorio.
+
+Agrega tu clave pública SSH a tu cuenta de GitHub: asegúrate de que tienes una clave pública SSH válida en tu cuenta de GitHub. Para hacer esto, ve a tu página de configuración de GitHub y haz clic en "SSH and GPG keys". Asegúrate de que hayas agregado la clave SSH correcta para el equipo en el que estás trabajando.
+
+Configura Git para utilizar tu clave SSH: asegúrate de que Git esté configurado para utilizar tu clave pública SSH. Para hacer esto, ejecuta los siguientes comandos en tu terminal:
+
+shell
+Copy code
+$ eval "$(ssh-agent -s)"
+$ ssh-add ~/.ssh/id_rsa
+Estos comandos agregarán tu clave SSH a ssh-agent, que es un programa que administra las claves SSH. Si tu clave SSH tiene un nombre diferente o se encuentra en una ubicación diferente, asegúrate de especificar la ruta y el nombre correctos.
+
+Verifica que tu clave SSH esté configurada correctamente: para verificar que tu clave SSH está configurada correctamente, ejecuta el siguiente comando:
+
+ruby
+Copy code
+$ ssh -T git@github.com
+Esto iniciará una conexión SSH con el servidor de GitHub y verificará que tu clave SSH esté configurada correctamente. Si todo está configurado correctamente, deberías ver un mensaje de confirmación.
+
+Si aún tienes problemas para autenticarte con GitHub, es posible que debas regenerar tu clave SSH y volver a agregarla a tu cuenta de GitHub. También es posible que debas verificar que tu firewall o configuración de red no estén bloqueando las conexiones SSH.
+
+
+
+
+Mariano Jaimez
+Como puedo crear y agregar una SSH keys
+Para crear y agregar una clave SSH a tu cuenta de GitHub, puedes seguir los siguientes pasos:
+
+Abre la terminal en tu ordenador y escribe el siguiente comando para generar una nueva clave SSH:
+
+css
+Copy code
+ssh-keygen -t rsa -b 4096 -C "tu_email@ejemplo.com"
+Esto generará una nueva clave SSH de tipo RSA de 4096 bits y le asignará una dirección de correo electrónico.
+
+A continuación, se te pedirá que especifiques la ubicación donde se almacenará la clave SSH. A menos que tengas una razón para cambiarla, simplemente presiona "Enter" para utilizar la ubicación predeterminada.
+
+Luego, se te pedirá que ingreses una frase de contraseña para proteger tu clave SSH. Si lo deseas, puedes ingresar una frase de contraseña, o simplemente presionar "Enter" para dejarla en blanco.
+
+Ahora que tu clave SSH está generada, puedes agregarla a tu cuenta de GitHub. Para hacer esto, inicia sesión en tu cuenta de GitHub, haz clic en tu foto de perfil en la esquina superior derecha y selecciona "Settings".
+
+En la barra lateral izquierda, selecciona "SSH and GPG keys". Luego, haz clic en "New SSH key".
+
+Dale un nombre descriptivo a tu clave SSH en el campo "Title".
+
+Ahora, regresa a la terminal y copia tu clave pública SSH al portapapeles con el siguiente comando:
+
+javascript
+Copy code
+pbcopy < ~/.ssh/id_rsa.pub
+Si estás en una máquina Windows, puedes abrir el archivo en un editor de texto y copiar el contenido.
+
+Pega la clave SSH en el campo "Key" en la página de GitHub y haz clic en "Add SSH key".
+
+Tu clave SSH ahora está agregada a tu cuenta de GitHub. Para verificar que todo funciona correctamente, ejecuta el siguiente comando en tu terminal:
+
+css
+Copy code
+ssh -T git@github.com
+Si todo está configurado correctamente, deberías ver un mensaje de confirmación.
+
+Eso es todo. Ahora tienes una clave SSH generada y agregada a tu cuenta de GitHub. Puedes utilizar esta clave SSH para autenticarte con GitHub en la terminal y realizar operaciones de Git sin tener que ingresar tus credenciales de GitHub cada vez.
+
+
+
+
+Mariano Jaimez
+En el paso numero 7 cuando trato de obtener mi clave publica ssh sucede esto
+
+$ pbcopy < ~/.ssh/id_rsa.pub
+bash: pbcopy: command not found
+El comando pbcopy es específico de sistemas operativos macOS y Linux. Si estás utilizando Windows, no podrás utilizar pbcopy.
+
+En Windows, el proceso para copiar la clave pública SSH a tu portapapeles es ligeramente diferente. Puedes hacer lo siguiente:
+
+Abre el archivo de tu clave pública SSH en un editor de texto, como Notepad o Visual Studio Code.
+
+Selecciona todo el contenido de la clave pública SSH y cópialo al portapapeles con la combinación de teclas Ctrl+C.
+
+Alternativamente, si prefieres utilizar pbcopy, puedes instalar una herramienta de línea de comandos para Windows que simula la funcionalidad de pbcopy. Una de las herramientas más populares es clip.exe. Para utilizarla, sigue estos pasos:
+
+Abre la terminal de Windows.
+
+Ejecuta el siguiente comando para copiar tu clave pública SSH al portapapeles:
+
+typescript
+Copy code
+type ~/.ssh/id_rsa.pub | clip.exe
+Este comando redirige el contenido de tu clave pública SSH al programa clip.exe, que copia el contenido al portapapeles.
+
+Con cualquiera de estas opciones, podrás copiar tu clave pública SSH al portapapeles y pegarla en la página de configuración de SSH de tu cuenta de GitHub.
+
+
+
+
+Mariano Jaimez
+Gracias ya pude resolver mis problemas anteriores pero tengo un nuevo problema
+
+$ git push origin master
+Enter passphrase for key '/c/Users/jaime/.ssh/id_rsa':
+ERROR: Repository not found.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+El mensaje de error indica que la clave SSH se está autenticando correctamente, pero Git no puede encontrar el repositorio remoto en la dirección que has especificado.
+
+Asegúrate de que la dirección del repositorio remoto especificada en el comando git push sea correcta y que el repositorio realmente exista en esa dirección. Es posible que hayas cometido un error al escribir la dirección URL del repositorio remoto.
+
+Para verificar la dirección URL del repositorio remoto, ejecuta el siguiente comando en la terminal:
+
+Copy code
+git remote -v
+Este comando te mostrará la dirección URL del repositorio remoto asociado con tu repositorio local.
+
+Si la dirección URL es incorrecta, puedes cambiarla con el siguiente comando:
+
+arduino
+Copy code
+git remote set-url origin <nueva-direccion-URL>
+Reemplaza <nueva-direccion-URL> con la dirección correcta del repositorio remoto.
+
+Si el repositorio remoto realmente existe en la dirección que has especificado, verifica que tengas los permisos necesarios para acceder al repositorio. Si el repositorio es propiedad de otra persona o de una organización, es posible que necesites que te agreguen como colaborador para poder hacer push al repositorio.
+
+Espero que esto te ayude a resolver el problema.
