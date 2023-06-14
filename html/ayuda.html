@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valkyria Comic Store</title>
+
+
+  <link rel="stylesheet" href="../css/normalize.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="../css/e-ayuda.css">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100;200;300;400&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+
+  <header>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-2 logo-container"> <!-- Logotipo -->
+          <img class="logo" src="../img/ValkyriaComicSotre.png" alt="Logo de la tienda">
+        </div>
+
+        <div id="target-div-stuffed" class="relleno col-8"></div>
+        <!-- Relleno para cuando no este activo el buscador targest-div -->
+
+        <div id="target-div" class="col-8 col-6-xs inactive search"> <!-- Buscador oculto con su cruseta -->
+          <button id="close-button" class="close-search">
+            X
+          </button>
+          <input class="col" type="text" id="search-input" placeholder="Buscar productos...">
+        </div>
+
+        <div class="col-2 buttons"> <!-- contenedor de botones -->
+          <button class="help-button"> <!-- Boton de ayuda -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#000000" class="bi bi-info-circle"
+              viewBox="0 0 16 16">
+              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+              <path
+                d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+            </svg>
+          </button>
+
+          <button id="toggle-button" class="search-button"><!-- Boton de busqueda -->
+            <!-- clase search-button por defecto. Toggle-button para ocultar y activar la busqueda -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#000000" class="bi bi-search"
+              viewBox="0 0 16 16">
+              <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+            </svg>
+          </button>
+
+          <button class="account-button"> <!-- redirige a la pagina de logueo -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#000000" class="bi bi-cart"
+              viewBox="0 0 16 16">
+              <path
+                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Divisor -->
+    <div class="divicion container-fluid"></div>
+
+    <!-- Navegador con los items -->
+    <ul class="nav nav-pills nav-fill">
+      </li>
+      <li class="nav-item">
+        <a class="font-style-me1 nav-link" onclick="redirectToInicio()">Inicio</a>
+        <!-- Esta inactivo por que estas en esa pagina -->
+      </li>
+      <li class="nav-item">
+        <a class="font-style-me1 nav-link" href="#">Productos</a>
+      </li>
+      <li class="nav-item">
+        <a class="font-style-me1 nav-link" href="#"> Editoriales</a>
+      </li>
+      <li class="nav-item">
+        <a class="font-style-me1 nav-link" href="#">Manga & Comic</a>
+      </li>
+      <li class="nav-item">
+        <a class="font-style-me1 nav-link" href="#">Como Comprar</a>
+      </li>
+      <li class="nav-item">
+        <a class="font-style-me1 nav-link" href="#">Contacto</a>
+      </li>
+    </ul>
+
+  </header>
+
+  <!-- incertar ayuda -->
+
+  <div class="container help-imput-container">
+    <form class="contact-form" id="contact-form">
+      <h2>Contacto</h2>
+      <input type="email" placeholder="Correo electrónico">
+      <input type="text" placeholder="Asunto">
+      <textarea placeholder="Mensaje"></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+
+  <!-- Claramente esto es un footer (?) -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h4>Más información</h4>
+          <ul>
+            <li><a class="font-style-me1" href="#">Acerca de nosotros</a></li>
+            <li><a class="font-style-me1" href="#">Políticas de privacidad</a></li>
+            <li><a class="font-style-me1" href="#">Términos y condiciones</a></li>
+          </ul>
+        </div>
+        <div class="col medios-de-pago">
+          <h4 class="geologica medios-de-pago">Medios de pago</h4>
+          <img src="../img/Metodos de pago/amex@2x.png" alt="Medio de pago 1">
+          <img src="../img/Metodos de pago/argencard@2x.png" alt="Medio de pago 2">
+          <img src="../img/Metodos de pago/banelco@2x.png" alt="Medio de pago 3">
+          <img src="../img/Metodos de pago/cabal@2x.png" alt="Medio de pago 4">
+          <img src="../img/Metodos de pago/diners@2x.png" alt="Medio de pago 5">
+          <img src="../img/Metodos de pago/mastercard@2x.png" alt="Medio de pago 6">
+          <img src="../img/Metodos de pago/mercadopago@2x.png" alt="Medio de pago 7">
+          <img src="../img/Metodos de pago/visa@2x.png" alt="Medio de pago 8">
+        </div>
+        <div class="col">
+          <h4>Contacto</h4>
+          <p class="font-style-me1">Teléfono: 02202-430025</p>
+          <p class="font-style-me1">Email: valkyriacomicsotre@gmail.com</p>
+          <p class="font-style-me1">Dirección: E. Simon Perez 4666, Gonzalez Catan, Buenos Aires</p>
+        </div>
+        <div class="col">
+          <h4>Información legal</h4>
+          <ul>
+            <li><a class="font-style-me1" href="#">Política de cookies</a></li>
+            <li><a class="font-style-me1" href="#">Aviso legal</a></li>
+            <li><a class="font-style-me1" href="#">Derechos de autor</a></li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p class="geologica">Diseñado por Jaimez Mariano - &copy;año 2023</p>
+    </div>
+  </footer>
+
+
+  <!-- Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+
+  <script src="../js/j-ayuda.js"></script>
+</body>0

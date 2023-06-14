@@ -1,0 +1,213 @@
+/* header */
+header {
+    background-color: #3C8DE1;
+    padding: 10px;
+}
+
+header .logo-container {
+    display: flex;
+    justify-content: center;
+}
+
+header .logo-container img {
+    margin: 5px;
+    width: 75%;
+}
+
+header .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .buttons button {
+    margin: 2px;
+    padding: 6px;
+    background-color: #82BEFF;
+    border-radius: 10px;
+}
+
+header .search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .search .close-search {
+    background-color: #82BEFF;
+    border-radius: 10px;
+    margin: 2px;
+}
+
+#search-input {
+    width: 125%;
+}
+
+header .inactive {
+    display: none;
+}
+
+.nav-item {
+    font-family: 'Geologica', sans-serif;
+    font-weight: bolder;
+    background-color: #3C8DE1;
+}
+
+.nav-item:hover {
+    background-color: #82BEFF;
+}
+
+.nav-item .nav-link {
+    color: black;
+}
+
+.divicion {
+    background-color: white;
+    padding: 1px;
+}
+
+@media screen and (max-width: 767px) {
+    .logo-container .logo {
+        display: none;
+    }
+}
+
+/* header */
+/*-------------------------------------*/
+
+.novedades {
+    height: 70%;
+}
+
+.geologica,
+.precio,
+.card-title,
+.font-style-me1,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Geologica', sans-serif;
+}
+
+.h1 {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: "Droid Sans", Sans-serif;
+    letter-spacing: 2px;
+}
+
+.title {
+    margin: 10px 0 30px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.title:after,
+.title:before,
+.subtitle:after,
+.subtitle:before {
+    flex-grow: 1;
+    height: 1px;
+    content: '\a0';
+    background-color: #7D7D7D;
+    position: relative;
+    top: 0.5em;
+}
+
+.calesita {
+    margin-top: 2px;
+    margin-bottom: 10px;
+}
+
+.card-title { /* titulo de producto */
+    font-size: 1.5em;
+}
+
+.card-body{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.button-card { /* aliniamiento de botones de productos / cards */
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+}
+
+/* footer */
+footer {
+    background-color: #3C8DE1;
+    padding-top: 20px;
+}
+
+.scroll-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    margin: 2px;
+    padding: 6px;
+    border-radius: 10px;
+    background-color: #82BEFF;
+    width: 5.5rem;
+    height: 5.5rem;
+}
+
+.envios {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #7d7d7d25;
+}
+
+/* otros */
+
+.my-btn {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #3B71CA;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+.my-btn:hover {
+    background-color: #3B71CA
+}
+
+.my-btn:active {
+    background-color: #3B71CA;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.medios-de-pago img {
+    padding: auto;
+    width: 50px;
+}
+
+.redes-sociales-png {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 60px;
+}
+
+.font-style-me1 {
+    color: black;
+    font-weight: bolder;
+}
